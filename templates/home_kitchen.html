@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Browse Home&Kitchen Tools</title>
+  </head>
+  <body class="bg-dark">
+    
+    {% include 'Header.html' %}
+    
+      <div style="display: flex;background: #95a5a6; " class="  p-4"><p class="h1 mx-auto my-auto">HOME & KITCHEN APPLIANCES</p></div>
+    <div class="row bg-dark" style="display: flex; justify-content: space-around ;width: 100%;">
+      {% for i in range(hk[0]|length)%}
+      <div class="card my-2 mx-2" style=" background: #ecf0f1; width: 260px; height: auto;">
+        <img class="card-img-top my-2"  height="220px" src="{{hk[1][i][0]}}" >
+        <div class="card-body">
+          <div class="text-bg-light my-2" style="font-weight:500;">{{hk[0][i][:20]+'..'}}</div>
+          <div class="text-black">{{hk[2][i]}}</div>
+
+          <div style="display: flex;" class="my-2">
+            <div style="margin-right: 3px; color: green;">Rs {{hk[4][i]}}</div>
+            <div style="margin-left: 80px;" >{{hk[5][i]}}&#x2605</div>
+          </div>
+        
+          <div class="text-danger my-4">No. of ratings: {{hk[6][i]}}</div>
+          <div><a href="/buyproduct?asin={{hk[3][i]}}&cat=hk&ravg={{hk[5][i]}}&rc={{hk[6][i]}}&p={{hk[4][i]}}" asin="{{hk[3][i]}}"><button class="btn btn-danger mx-auto">Buy Now</button></a></div>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    {% include 'Footer.html' %}
+</body>
+</html>
+
+   

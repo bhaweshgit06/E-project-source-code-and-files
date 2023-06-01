@@ -1,0 +1,9 @@
+.grocery{
+display : flex;
+color :aliceblue blue;
+height : 100px;
+    }
+
+.list{
+display : inline-block;
+}
